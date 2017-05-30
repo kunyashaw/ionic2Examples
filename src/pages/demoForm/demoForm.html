@@ -1,0 +1,303 @@
+<ion-header>
+    <ion-navbar>
+        <ion-buttons start>
+            <button ion-button icon-only>
+                <ion-icon name='contact'></ion-icon>
+            </button>
+        </ion-buttons>
+        <ion-title>
+            Ionic Buttons
+        </ion-title>
+        <ion-buttons end>
+            <button ion-button icon-only>
+                <ion-icon name='refresh'></ion-icon>
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+
+    <ion-list>
+        <ion-item>
+            <ion-label>Start time</ion-label>
+            <ion-datetime displayFormat="h:mm A" pickerFormat="yy-MM-dd-h-mm-A"> </ion-datetime>
+        </ion-item>
+    </ion-list>
+
+    <!-- fab :floating action buttons -->
+    <!--ion-fab  left top center bottom right middle -->
+    <ion-fab right bottom>
+        <button ion-fab mini>
+            <ion-icon name='add'></ion-icon>
+        </button>
+        <!-- side="left/right/top/bottom"-->
+        <ion-fab-list side='top'>
+            <button ion-fab>
+                <ion-icon name='logo-facebook'></ion-icon>
+            </button>
+            <button ion-fab>
+                <ion-icon name='logo-twitter'></ion-icon>
+            </button>
+            <button ion-fab>
+                <ion-icon name='logo-vimeo'></ion-icon>
+            </button>
+            <button ion-fab>
+                <ion-icon name='logo-googleplus'></ion-icon>
+            </button>
+            <button ion-fab>
+                <ion-icon name='logo-angular'></ion-icon>
+            </button>
+        </ion-fab-list>
+    </ion-fab>
+
+    <!--gestures-->
+    <!--tap press pan swipe rotate pinch-->
+    <ion-card (pinch)="pinchEvent($event)">
+        <ion-list>
+            <ion-item (tap)="tapEvent($event)">tap</ion-item>
+            <ion-item (swipe)="swipeEvent($event)">swipe</ion-item>
+        </ion-list>
+    </ion-card>
+
+    <!--grid-->
+    <!--ion-row ion-col 
+        the grid system is made of a 12 columns. ion-col-1(1~12)
+    -->
+    <ion-grid>
+        <ion-row>
+            <ion-col>
+                <button ion-button block>col1</button>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col>
+                <button ion-button block>col1</button>
+            </ion-col>
+            <ion-col>
+                <button ion-button block>col2</button>
+            </ion-col>
+            <ion-col>
+                <button ion-button block>col3</button>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col col-6>
+                <button ion-button block>col1-6</button>
+            </ion-col>
+            <ion-col col-4>
+                <button ion-button block>col2</button>
+            </ion-col>
+            <ion-col col-2>
+                <button ion-button block>col3</button>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+
+    <!--inputs-->
+    <!-- fixed inline labels -->
+    <span> fixed inline labels </span>
+    <ion-list>
+        <ion-item>
+            <ion-label fixed>name</ion-label>
+            <ion-input type='text' value=''></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label fixed>pwd</ion-label>
+            <ion-input type='password'></ion-input>
+        </ion-item>
+    </ion-list>
+
+    <!--floating labels-->
+    <span> floating labels </span>
+    <ion-list>
+        <ion-item>
+            <ion-label floating>name</ion-label>
+            <ion-input type='text' value=''></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label floating>pwd</ion-label>
+            <ion-input type='password'></ion-input>
+        </ion-item>
+    </ion-list>
+
+    <!-- inline labels(without any attributes) -->
+    <span> inline labels </span>
+    <ion-list>
+        <ion-item>
+            <ion-label>name</ion-label>
+            <ion-input type='text' value=''></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label>pwd</ion-label>
+            <ion-input type='password'></ion-input>
+        </ion-item>
+    </ion-list>
+
+    <!--inset labels-->
+    <span> inset labels </span>
+    <ion-list inset>
+        <ion-item>
+            <ion-label>name</ion-label>
+            <ion-input type='text' value=''></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label>pwd</ion-label>
+            <ion-input type='password'></ion-input>
+        </ion-item>
+    </ion-list>
+
+    <!--placeholder-->
+    <span> palceholder labels </span>
+    <ion-list>
+        <ion-item>
+            <ion-input type='text' placeholder="plz input username"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-input type='password' placeholder="plz input pwd"></ion-input>
+        </ion-item>
+    </ion-list>
+
+    <!--stacked labels-->
+    <span>stacked labels</span>
+    <ion-list>
+        <ion-item>
+            <ion-label stacked>name</ion-label>
+            <ion-input type='text' value=''></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label stacked>pwd</ion-label>
+            <ion-input type='password'></ion-input>
+        </ion-item>
+    </ion-list>
+
+
+    <!--LIST-->
+    <!--default list is with dividers-->
+    <ion-list>
+        <button ion-item *ngFor="let tmp of myList">{{tmp}}</button>
+    </ion-list>
+
+    <!--no line -->
+    <ion-list no-lines>
+        <button ion-item *ngFor="let tmp of myList">{{tmp}}</button>
+    </ion-list>
+
+    <!--inset list-->
+    <ion-list inset>
+        <button ion-item *ngFor="let tmp of myList">{{tmp}}</button>
+    </ion-list>
+
+    <!--list with dividers-->
+    <!--user ion-item-group instead of ion-list,user ion-item-divider to divide-->
+    <ion-item-group>
+        <ion-item-divider>First</ion-item-divider>
+        <button ion-item *ngFor="let tmp of myList">{{tmp}}</button>
+        <ion-item-divider>Second</ion-item-divider>
+        <button ion-item *ngFor="let tmp of myList">{{tmp}}</button>
+    </ion-item-group>
+
+    <!--list with header-->
+    <ion-list>
+        <ion-list-header>
+            Action
+        </ion-list-header>
+        <button ion-item *ngFor="let tmp of myList">{{tmp}}</button>
+    </ion-list>
+
+    <!--icon list-->
+    <ion-list inset>
+        <button ion-item *ngFor="let tmp of myList">
+            <ion-icon name='logo-angular'></ion-icon>
+            {{tmp}}
+            </button>
+    </ion-list>
+
+    <!--avator list-->
+    <ion-list inset>
+        <ion-item *ngFor="let tmp of myList">
+            <ion-avatar item-left>
+                <img src="../assets/img/Australia.png" />
+            </ion-avatar>
+            <h2>{{tmp}}</h2>
+        </ion-item>
+    </ion-list>
+
+    <!--sliding list-->
+    <!--Sliding items can be swiped to the left or right to reveal a hidden set of buttons.
+     To use a sliding item, add an ion-item-sliding
+    component inside of an ion-list component. Next, add an
+    <ion-item-options> component inside of the sliding item to contain the buttons.-->
+    <ion-list>
+        <ion-item-sliding *ngFor="let tmp of myList">
+            <ion-item>
+                {{tmp}}
+            </ion-item>
+            <ion-item-options side='right'>
+                <button ion-button color='primary'>
+                        <ion-icon name='checkmark'></ion-icon>
+                        done
+                    </button>
+                <button ion-button color='danger'>
+                        <ion-icon name='close'></ion-icon>
+                        delete
+                    </button>
+            </ion-item-options>
+        </ion-item-sliding>
+    </ion-list>
+
+    <!--thumbnal list-->
+    <ion-list>
+        <ion-item>
+            <ion-thumbnail item-left>
+                <img src="../assets/icon/favicon.ico" alt="">
+            </ion-thumbnail>
+            <h2>鱼香肉丝</h2>
+            <p>原材料介绍</p>
+            <p>30!</p>
+        </ion-item>
+    </ion-list>
+
+    <!--range 滑动组件-->
+    <ion-item>
+        <ion-range [(ngModel)]="brightness">
+            <ion-icon range-left small name="sunny"></ion-icon>
+            <ion-icon range-right name="sunny"></ion-icon>
+        </ion-range>
+    </ion-item>
+
+    <!-- searchBar -->
+    <ion-searchbar [debounce]="500" (ionInput)="getItems($event)"></ion-searchbar>
+
+
+    <!-- select 下拉菜单-->
+    <ion-list>
+        <ion-item>
+            <ion-label>Gaming</ion-label>
+            <ion-select [(ngModel)]="gaming">
+                <ion-option value="nes">NES</ion-option>
+                <ion-option value="n64">Nintendo64</ion-option>
+                <ion-option value="ps">PlayStation</ion-option>
+                <ion-option value="genesis">Sega Genesis</ion-option>
+                <ion-option value="saturn">Sega Saturn</ion-option>
+                <ion-option value="snes">SNES</ion-option>
+            </ion-select>
+        </ion-item>
+    </ion-list>
+
+    <!--切换开关-->
+    <ion-list>
+        <ion-item>
+            <ion-label> Sam</ion-label>
+            <ion-toggle disabled checked="false"></ion-toggle>
+        </ion-item>
+        <ion-item>
+            <ion-label> 灯</ion-label>
+            <ion-toggle color=“primary” checked="false"></ion-toggle>
+        </ion-item>
+    </ion-list>
+
+
+
+</ion-content>

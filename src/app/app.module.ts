@@ -6,11 +6,23 @@ import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
+import { demoWindows } from '../pages/demoWindows/demoWindows'
+import { demoButtons } from '../pages/demoButtons/demoButtons'
+import { demoCards } from '../pages/demoCards/demoCards'
+import { demoForm } from '../pages/demoForm/demoForm'
+import { demo2Windows } from '../pages/demo2Windows/demo2Windows'
+import { TestModal } from '../pages/demo2Windows/testModal'
 
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    HomePage,
+    demoWindows,
+    demoButtons,
+    demoCards,
+    demoForm,
+    demo2Windows,
+    TestModal
   ],
   imports: [
     BrowserModule,
@@ -19,12 +31,18 @@ import { HomePage } from '../pages/home/home';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    HomePage,
+    demoWindows,
+    demoButtons,
+    demoCards,
+    demoForm,
+    demo2Windows,
+    TestModal
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    { provide: ErrorHandler, useClass: IonicErrorHandler }
   ]
 })
-export class AppModule {}
+export class AppModule { }

@@ -1,0 +1,61 @@
+<ion-header>
+    <ion-navbar>
+        <ion-buttons start>
+            <button ion-button icon-only>
+                <ion-icon name='contact'></ion-icon>
+            </button>
+        </ion-buttons>
+        <ion-title>
+            Ionic Buttons
+        </ion-title>
+        <ion-buttons end>
+            <button ion-button icon-only>
+                <ion-icon name='refresh'></ion-icon>
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding class="card-background-page">
+    <button ion-button color='secondary' (click)="showBasicCard()">showCard</button>
+
+    <ion-card>
+        <ion-card-header>
+            header
+        </ion-card-header>
+
+        <ion-card-content>
+            it is content of card
+        </ion-card-content>
+    </ion-card>
+
+    <!-- card with pic-->
+    <ion-card>
+        <img src="../assets/img/Australia.png" alt="">
+        <ion-card-content>
+            <ion-card-title>
+                Australia
+            </ion-card-title>
+            <p> Welcome to Australia,plz make yourself at home</p>
+        </ion-card-content>
+    </ion-card>
+
+    <!--social card -->
+    <ion-card>
+        <ion-item>
+            <ion-avatar item-left>
+                <img src="../assets/img/Australia.png" alt="" />
+            </ion-avatar>
+            <h2>Lucy</h2>
+            <p> Hello Lucy!</p>
+        </ion-item>
+
+        <img src="../assets/img/Australia.png" alt="">
+
+        <ion-card-content>
+            <p>i'm the content of myCard</p>
+        </ion-card-content>
+
+    </ion-card>
+
+</ion-content>
